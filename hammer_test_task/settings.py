@@ -13,6 +13,8 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -116,17 +118,8 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hammer',
-        'USER': 'admin',
-        'PASSWORD': 'Y1CpsEuTY',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
+DATABASES = {'default': dj_database_url.parse(
+    "postgres://admin:ArpkWABPBqQfdxnFcWvHkk9qin3PI9yN@dpg-cjh28a41ja0c739rr4ig-a.oregon-postgres.render.com/hammer")}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
